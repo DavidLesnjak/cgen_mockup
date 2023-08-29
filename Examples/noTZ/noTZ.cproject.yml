@@ -1,0 +1,28 @@
+project:
+  processor:
+    trustzone: off
+  packs:
+    - pack: Keil::STM32U5xx_DFP@3.0.0
+  #  - pack: ARM::SDS
+
+  connections:
+    - connect: Demo Application
+      provides:
+        - CMSIS-RTOS2
+      consumes:
+        - STDIN
+        - STDOUT
+        - STDERR
+        - Heap: 65536
+
+  # components:
+  #  - component: Keil::Device:STM32Cube Framework:STM32CubeMX
+
+
+  # generators:
+  #   options:
+  #   - generator: STM32CubeMX
+  #     path: ./STM32CubeMX
+
+  generators:
+    generator: STM32CubeMX

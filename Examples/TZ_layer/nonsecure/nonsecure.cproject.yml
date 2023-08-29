@@ -1,0 +1,19 @@
+project:
+  processor:
+    trustzone: non-secure
+  packs:
+    - pack: Keil::STM32U5xx_DFP@3.0.0
+
+  connections:
+    - connect: Demo Application
+      provides:
+        - CMSIS-RTOS2
+      consumes:
+        - STDIN
+        - STDOUT
+        - STDERR
+        - Heap: 65536
+
+  layers:
+    - layer: ../layer/Board/B-U585I-IOT02A_nonsecure/Board.clayer.yml
+      type: Board
