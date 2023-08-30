@@ -3,26 +3,12 @@ project:
     trustzone: off
   packs:
     - pack: Keil::STM32U5xx_DFP@3.0.0
-  #  - pack: ARM::SDS
 
-  connections:
-    - connect: Demo Application
-      provides:
-        - CMSIS-RTOS2
-      consumes:
-        - STDIN
-        - STDOUT
-        - STDERR
-        - Heap: 65536
-
-  # components:
-  #  - component: Keil::Device:STM32Cube Framework:STM32CubeMX
-
+  components:
+    - component: ARM::CMSIS:CORE
+    - component: Keil::Device:Startup&Source C
 
   # generators:
-  #   options:
-  #   - generator: STM32CubeMX
-  #     path: ./STM32CubeMX
-
-  generators:
-    generator: STM32CubeMX
+  #   generator: STM32CubeMX
+  layers: # Only for test to include "cgen.yml"
+    - layer: ./STM32CubeMX/STM32U585AIIx/STM32CubeMX_cgen_test.layer.yml

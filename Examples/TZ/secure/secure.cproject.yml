@@ -4,6 +4,10 @@ project:
   packs:
     - pack: Keil::STM32U5xx_DFP@3.0.0
 
+  components:
+    - component: ARM::CMSIS:CORE
+    - component: Keil::Device:Startup&Source C
+
   connections:
     - connect: Demo Application
       provides:
@@ -14,5 +18,7 @@ project:
         - STDERR
         - Heap: 65536
 
-  generators:
-    generator: STM32CubeMX
+  # generators:
+  #   generator: STM32CubeMX
+  layers: # Only for test to include "cgen.yml"
+    - layer: ./STM32CubeMX/STM32U585AIIx/STM32CubeMX_cgen_test.layer.yml
