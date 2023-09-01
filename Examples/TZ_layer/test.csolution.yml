@@ -19,5 +19,5 @@ solution:
       optimize: balanced
 
   projects:
-    - project: ./nonsecure/nonsecure.cproject.yml
     - project: ./secure/secure.cproject.yml
+    - project: ./nonsecure/nonsecure.cproject.yml
