@@ -1,0 +1,149 @@
+build-gen:
+  generated-by: csolution version 0.0.0+g8b0e14a8
+  solution: ../../../../test.csolution.yml
+  project: ../../../../nonsecure/nonsecure.cproject.yml
+  context: nonsecure.Debug+B-U585I-IOT02A
+  compiler: AC6
+  board: STMicroelectronics::B-U585I-IOT02A
+  device: STM32U585AIIx
+  processor:
+    fpu: on
+    endian: little
+    trustzone: non-secure
+  packs:
+    - pack: ARM::CMSIS@5.9.0
+      path: ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0
+    - pack: Keil::B-U585I-IOT02A_BSP@1.0.0
+      path: ${CMSIS_PACK_ROOT}/Keil/B-U585I-IOT02A_BSP/1.0.0
+    - pack: Keil::STM32U5xx_DFP@3.0.0-extgen0
+      path: ../../../../../../Packs/STM32U5xx_DFP
+  optimize: none
+  debug: on
+  misc:
+    ASM:
+      - -masm=auto
+    C:
+      - -std=c11
+      - -Wno-macro-redefined
+      - -Wno-pragma-pack
+      - -Wno-parentheses-equality
+    CPP:
+      - -Wno-macro-redefined
+      - -Wno-pragma-pack
+      - -Wno-parentheses-equality
+    Link:
+      - --entry=Reset_Handler
+  define:
+    - CMSIS_board_header: "\"B_U585I_IOT02A_DK.h\""
+    - MX_WIFI_SPI_FLOW_PIN: GPIO_PIN_15
+    - MX_WIFI_SPI_FLOW_PORT: GPIOG
+    - MX_WIFI_SPI_IRQ_PIN: GPIO_PIN_14
+    - MX_WIFI_SPI_IRQ_PORT: GPIOD
+    - MX_WIFI_SPI_IRQ: EXTI14_IRQn
+    - MX_WIFI_SPI_CS_PIN: GPIO_PIN_12
+    - MX_WIFI_SPI_CS_PORT: GPIOB
+    - MX_WIFI_RESET_PIN: GPIO_PIN_15
+    - MX_WIFI_RESET_PORT: GPIOF
+    - STM32U585xx
+    - _RTE_
+  add-path:
+    - ../../../../nonsecure/RTE/CMSIS
+    - ../../../../nonsecure/RTE/_Debug_B-U585I-IOT02A
+    - ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+    - ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/RTOS2/Include
+    - ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/RTOS2/RTX/Include
+    - ../../../../../../Packs/STM32U5xx_DFP/Drivers/CMSIS/Device/ST/STM32U5xx/Include
+  output-dirs:
+    intdir: ../tmp/nonsecure/B-U585I-IOT02A/Debug
+    outdir: ../out/nonsecure/B-U585I-IOT02A/Debug
+    rtedir: RTE
+  output:
+    - type: elf
+      file: nonsecure.axf
+  components:
+    - component: ARM::CMSIS:CORE@5.6.0
+      condition: ARMv6_7_8-M Device
+      from-pack: ARM::CMSIS@5.9.0
+      selected-by: ARM::CMSIS:CORE
+    - component: ARM::CMSIS:RTOS2:Keil RTX5&Source@5.5.4
+      condition: RTOS2 RTX5
+      from-pack: ARM::CMSIS@5.9.0
+      selected-by: ARM::CMSIS:RTOS2:Keil RTX5&Source
+      files:
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/RTOS2/RTX/Source/GCC/irq_armv8mml.S
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/RTOS2/RTX/Source/rtx_delay.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/RTOS2/RTX/Source/rtx_evflags.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/RTOS2/RTX/Source/rtx_evr.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/RTOS2/RTX/Source/rtx_kernel.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/RTOS2/RTX/Source/rtx_lib.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/RTOS2/RTX/Source/rtx_memory.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/RTOS2/RTX/Source/rtx_mempool.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/RTOS2/RTX/Source/rtx_msgqueue.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/RTOS2/RTX/Source/rtx_mutex.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/RTOS2/RTX/Source/rtx_semaphore.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/RTOS2/RTX/Source/rtx_system.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/RTOS2/RTX/Source/rtx_thread.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/RTOS2/RTX/Source/rtx_timer.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/RTOS2/Source/os_systick.c
+          category: source
+        - file: ../../../../nonsecure/RTE/CMSIS/RTX_Config.c
+          category: source
+          attr: config
+          version: 5.1.1
+        - file: ../../../../nonsecure/RTE/CMSIS/RTX_Config.h
+          category: header
+          attr: config
+          version: 5.5.2
+    - component: Keil::Device:Startup&Source C@1.0.0
+      condition: STM32U5 CMSIS
+      from-pack: Keil::STM32U5xx_DFP@3.0.0-extgen0
+      selected-by: Keil::Device:Startup&Source C
+      files:
+        - file: ../../../../layer/Board/B-U585I-IOT02A_nonsecure/RTE/Device/STM32U585AIIx/system_stm32u5xx_ns.c
+          category: source
+          attr: config
+          version: 1.2.0
+        - file: ../../../../layer/Board/B-U585I-IOT02A_nonsecure/RTE/Device/STM32U585AIIx/stm32u585xx_flash_ns.sct
+          category: linkerScript
+          attr: config
+          version: 2.0.0
+        - file: ../../../../layer/Board/B-U585I-IOT02A_nonsecure/RTE/Device/STM32U585AIIx/startup_stm32u585xx.c
+          category: source
+          attr: config
+          version: 1.0.0
+    - component: Keil::Global Generators:STM32CubeMX@0.9.0
+      from-pack: Keil::STM32U5xx_DFP@3.0.0-extgen0
+      selected-by: Global Generators:STM32CubeMX
+  linker:
+    script: ../../../../layer/Board/B-U585I-IOT02A_nonsecure/RTE/Device/STM32U585AIIx/stm32u585xx_flash_ns.sct
+  constructed-files:
+    - file: ../../../../nonsecure/RTE/_Debug_B-U585I-IOT02A/RTE_Components.h
+      category: header
+  licenses:
+    - license: <unknown>
+      packs:
+        - pack: ARM::CMSIS@5.9.0
+      components:
+        - component: ::CMSIS:RTOS2(API)
+        - component: ARM::CMSIS:CORE@5.6.0
+        - component: ARM::CMSIS:RTOS2:Keil RTX5&Source@5.5.4
+    - license: <unknown>
+      packs:
+        - pack: Keil::STM32U5xx_DFP@3.0.0-extgen0
+      components:
+        - component: Keil::Device:Startup&Source C@1.0.0
+        - component: Keil::Global Generators:STM32CubeMX@0.9.0
