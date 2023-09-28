@@ -1,0 +1,92 @@
+build-gen:
+  generated-by: csolution version 0.0.0+g8b0e14a8
+  solution: ../../../../test.csolution.yml
+  project: ../../../../noTZ.cproject.yml
+  context: noTZ.Debug+B-U585I-IOT02A
+  compiler: AC6
+  board: STMicroelectronics::B-U585I-IOT02A
+  device: STM32U585AIIx
+  processor:
+    fpu: on
+    endian: little
+    trustzone: off
+  packs:
+    - pack: ARM::CMSIS@6.0.0-dev35
+      path: ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.0.0-dev35
+    - pack: Keil::B-U585I-IOT02A_BSP@1.0.0
+      path: ${CMSIS_PACK_ROOT}/Keil/B-U585I-IOT02A_BSP/1.0.0
+    - pack: Keil::STM32U5xx_DFP@3.0.0-extgen0
+      path: ../../../../../../Packs/STM32U5xx_DFP
+  optimize: none
+  debug: on
+  misc:
+    ASM:
+      - -masm=auto
+    C:
+      - -std=c11
+      - -Wno-macro-redefined
+      - -Wno-pragma-pack
+      - -Wno-parentheses-equality
+    CPP:
+      - -Wno-macro-redefined
+      - -Wno-pragma-pack
+      - -Wno-parentheses-equality
+    Link:
+      - --entry=Reset_Handler
+  define:
+    - STM32U585xx
+    - _RTE_
+  add-path:
+    - ../../../../RTE/_Debug_B-U585I-IOT02A
+    - ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.0.0-dev35/CMSIS/Core/Include
+    - ../../../../../../Packs/STM32U5xx_DFP/Drivers/CMSIS/Device/ST/STM32U5xx/Include
+  output-dirs:
+    intdir: tmp/noTZ/B-U585I-IOT02A/Debug
+    outdir: out/noTZ/B-U585I-IOT02A/Debug
+    rtedir: RTE
+  output:
+    - type: elf
+      file: noTZ.axf
+  components:
+    - component: ARM::CMSIS:CORE@5.7.0
+      condition: ARMv6_7_8-M Device
+      from-pack: ARM::CMSIS@6.0.0-dev35
+      selected-by: ARM::CMSIS:CORE
+    - component: Keil::Device:Startup&Source C@1.0.0
+      condition: STM32U5 CMSIS
+      from-pack: Keil::STM32U5xx_DFP@3.0.0-extgen0
+      selected-by: Keil::Device:Startup&Source C
+      files:
+        - file: ../../../../RTE/Device/STM32U585AIIx/system_stm32u5xx.c
+          category: source
+          attr: config
+          version: 1.2.0
+        - file: ../../../../RTE/Device/STM32U585AIIx/stm32u585xx_flash.sct
+          category: linkerScript
+          attr: config
+          version: 2.0.0
+        - file: ../../../../RTE/Device/STM32U585AIIx/startup_stm32u585xx.c
+          category: source
+          attr: config
+          version: 1.0.0
+    - component: Keil::Global Generators:STM32CubeMX@0.9.0
+      from-pack: Keil::STM32U5xx_DFP@3.0.0-extgen0
+      selected-by: Global Generators:STM32CubeMX
+  linker:
+    script: ../../../../RTE/Device/STM32U585AIIx/stm32u585xx_flash.sct
+  constructed-files:
+    - file: ../../../../RTE/_Debug_B-U585I-IOT02A/RTE_Components.h
+      category: header
+  licenses:
+    - license: <unknown>
+      license-agreement: ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.0.0-dev35/LICENSE
+      packs:
+        - pack: ARM::CMSIS@6.0.0-dev35
+      components:
+        - component: ARM::CMSIS:CORE@5.7.0
+    - license: <unknown>
+      packs:
+        - pack: Keil::STM32U5xx_DFP@3.0.0-extgen0
+      components:
+        - component: Keil::Device:Startup&Source C@1.0.0
+        - component: Keil::Global Generators:STM32CubeMX@0.9.0
