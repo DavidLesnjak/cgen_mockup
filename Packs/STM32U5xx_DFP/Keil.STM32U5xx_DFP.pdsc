@@ -3629,8 +3629,8 @@ Offering up to 2 Mbytes of Flash (dual bank) memory and 786 Kbytes of SRAM, the 
         <file category="source" name="CMSIS/Driver/USBH_OTG_STM32U5xx.c"/>
       </files>
     </component>
-    <component generator="GlobalSTM32CubeMX" Cclass="Global Generators" Cgroup="STM32CubeMX" Cversion="0.9.0">
-      <description>GlobalSTM32CubeMX</description>
+    <component generator="CubeMX" Cclass="Device" Cgroup="CubeMX" Cversion="0.9.0">
+      <description>Configure device or board with STM32CubeMX</description>
     </component>
   </components>
 </package>

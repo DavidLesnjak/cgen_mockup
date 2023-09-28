@@ -61,4 +61,4 @@ layer:
   components:
     - component: Keil::Device:Startup&Source C
     - component: ARM::CMSIS:CORE
-    - component: Global Generators:STM32CubeMX
+    - component: Device:CubeMX

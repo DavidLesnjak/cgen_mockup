@@ -111,6 +111,9 @@ build-gen:
           category: header
           attr: config
           version: 5.5.2
+    - component: Keil::Device:CubeMX@0.9.0
+      from-pack: Keil::STM32U5xx_DFP@3.0.0-extgen0
+      selected-by: Device:CubeMX
     - component: Keil::Device:Startup&Source C@1.0.0
       condition: STM32U5 CMSIS
       from-pack: Keil::STM32U5xx_DFP@3.0.0-extgen0
@@ -136,9 +139,6 @@ build-gen:
           category: source
           attr: config
           version: 1.0.0
-    - component: Keil::Global Generators:STM32CubeMX@0.9.0
-      from-pack: Keil::STM32U5xx_DFP@3.0.0-extgen0
-      selected-by: Global Generators:STM32CubeMX
   linker:
     script: ../../../../layer/Board/B-U585I-IOT02A_secure/RTE/Device/STM32U585AIIx/stm32u585xx_flash_s.sct
   constructed-files:
@@ -156,5 +156,5 @@ build-gen:
       packs:
         - pack: Keil::STM32U5xx_DFP@3.0.0-extgen0
       components:
+        - component: Keil::Device:CubeMX@0.9.0
         - component: Keil::Device:Startup&Source C@1.0.0
-        - component: Keil::Global Generators:STM32CubeMX@0.9.0

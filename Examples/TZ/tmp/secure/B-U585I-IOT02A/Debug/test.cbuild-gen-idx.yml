@@ -1,7 +1,8 @@
 build-gen-idx:
   generated-by: csolution version 0.0.0+g8b0e14a8
   generators:
-    - id: GlobalSTM32CubeMX
+    - id: CubeMX
+      output: ../../../../STM32CubeMX/STM32U585AIIx
       device: STM32U585AIIx
       board: STMicroelectronics::B-U585I-IOT02A
       project-type: trustzone
@@ -10,9 +11,7 @@ build-gen-idx:
           project: nonsecure
           configuration: .Debug+B-U585I-IOT02A
           for-project-part: non-secure
-          output: ../../../../STM32CubeMX/STM32U585AIIx
         - cbuild-gen: secure.Debug+B-U585I-IOT02A.cbuild-gen.yml
           project: secure
           configuration: .Debug+B-U585I-IOT02A
           for-project-part: secure
-          output: ../../../../STM32CubeMX/STM32U585AIIx

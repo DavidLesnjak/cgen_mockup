@@ -8,4 +8,4 @@ project:
   components:
     - component: ARM::CMSIS:CORE
     - component: Keil::Device:Startup&Source C
-    - component: Global Generators:STM32CubeMX
+    - component: Device:CubeMX
