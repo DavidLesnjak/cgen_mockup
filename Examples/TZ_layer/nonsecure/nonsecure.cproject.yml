@@ -16,7 +16,3 @@ project:
   layers:
     - layer: ../layer/Board/B-U585I-IOT02A_nonsecure/Board.clayer.yml
       type: Board
-
-    # Only for test to include "cgen.yml". (STM32CubeMX.cgen.yml should be included from Board.clayer.yml)
-    - layer: ../layer/Board/B-U585I-IOT02A_nonsecure/STM32CubeMX/STM32U585AIIx/STM32CubeMX_cgen_test.layer.yml
-

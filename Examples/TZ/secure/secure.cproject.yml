@@ -2,11 +2,13 @@ project:
   processor:
     trustzone: secure
   packs:
-    - pack: Keil::STM32U5xx_DFP@3.0.0
+    - pack: Keil::STM32U5xx_DFP
+      path: ../../../Packs/STM32U5xx_DFP
 
   components:
     - component: ARM::CMSIS:CORE
     - component: Keil::Device:Startup&Source C
+    - component: Global Generators:STM32CubeMX
 
   connections:
     - connect: Demo Application
@@ -17,8 +19,3 @@ project:
         - STDOUT
         - STDERR
         - Heap: 65536
-
-  # generators:
-  #   generator: STM32CubeMX
-  layers: # Only for test to include "cgen.yml"
-    - layer: ./STM32CubeMX/STM32U585AIIx/STM32CubeMX_cgen_test.layer.yml
