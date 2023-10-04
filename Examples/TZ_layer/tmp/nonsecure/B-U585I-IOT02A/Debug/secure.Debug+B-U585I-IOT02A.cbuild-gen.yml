@@ -1,5 +1,5 @@
 build-gen:
-  generated-by: csolution version 0.0.0+g8b0e14a8
+  generated-by: csolution version 0.0.0+g56310e88
   solution: ../../../../test.csolution.yml
   project: ../../../../secure/secure.cproject.yml
   context: secure.Debug+B-U585I-IOT02A
@@ -10,6 +10,7 @@ build-gen:
     fpu: on
     endian: little
     trustzone: secure
+    core: Cortex-M33
   packs:
     - pack: ARM::CMSIS@5.9.0
       path: ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0

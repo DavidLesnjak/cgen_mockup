@@ -1,5 +1,5 @@
 build-gen:
-  generated-by: csolution version 0.0.0+g8b0e14a8
+  generated-by: csolution version 0.0.0+g56310e88
   solution: ../../../../test.csolution.yml
   project: ../../../../noTZ.cproject.yml
   context: noTZ.Debug+B-U585I-IOT02A
@@ -10,6 +10,7 @@ build-gen:
     fpu: on
     endian: little
     trustzone: off
+    core: Cortex-M33
   packs:
     - pack: ARM::CMSIS@6.0.0-dev35
       path: ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.0.0-dev35
