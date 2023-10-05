@@ -47,6 +47,7 @@
 
 /* Private function prototypes -----------------------------------------------*/
 static void MX_GTZC_NS_Init(void);
+static void MX_MEMORYMAP_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -83,6 +84,7 @@ int main(void)
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
+  MX_MEMORYMAP_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -116,6 +118,27 @@ static void MX_GTZC_NS_Init(void)
   /* USER CODE BEGIN GTZC_NS_Init 2 */
 
   /* USER CODE END GTZC_NS_Init 2 */
+
+}
+
+/**
+  * @brief MEMORYMAP Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_MEMORYMAP_Init(void)
+{
+
+  /* USER CODE BEGIN MEMORYMAP_Init 0 */
+
+  /* USER CODE END MEMORYMAP_Init 0 */
+
+  /* USER CODE BEGIN MEMORYMAP_Init 1 */
+
+  /* USER CODE END MEMORYMAP_Init 1 */
+  /* USER CODE BEGIN MEMORYMAP_Init 2 */
+
+  /* USER CODE END MEMORYMAP_Init 2 */
 
 }
 

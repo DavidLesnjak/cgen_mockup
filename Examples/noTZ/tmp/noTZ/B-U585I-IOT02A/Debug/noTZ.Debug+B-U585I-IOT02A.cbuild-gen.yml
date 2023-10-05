@@ -42,9 +42,9 @@ build-gen:
     - ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.0.0-dev35/CMSIS/Core/Include
     - ../../../../../../Packs/STM32U5xx_DFP/Drivers/CMSIS/Device/ST/STM32U5xx/Include
   output-dirs:
-    intdir: tmp/noTZ/B-U585I-IOT02A/Debug
-    outdir: out/noTZ/B-U585I-IOT02A/Debug
-    rtedir: RTE
+    intdir: .
+    outdir: ../../../../out/noTZ/B-U585I-IOT02A/Debug
+    rtedir: ../../../../RTE
   output:
     - type: elf
       file: noTZ.axf

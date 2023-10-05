@@ -42,9 +42,9 @@ build-gen:
     - ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.0.0-dev35/CMSIS/Core/Include
     - ../../../../../../Packs/STM32U5xx_DFP/Drivers/CMSIS/Device/ST/STM32U5xx/Include
   output-dirs:
-    intdir: ../tmp/nonsecure/B-U585I-IOT02A/Debug
-    outdir: ../out/nonsecure/B-U585I-IOT02A/Debug
-    rtedir: RTE
+    intdir: ../../../nonsecure/B-U585I-IOT02A/Debug
+    outdir: ../../../../out/nonsecure/B-U585I-IOT02A/Debug
+    rtedir: ../../../../nonsecure/RTE
   output:
     - type: elf
       file: nonsecure.axf

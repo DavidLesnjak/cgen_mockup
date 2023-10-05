@@ -56,9 +56,9 @@ build-gen:
     - ${CMSIS_PACK_ROOT}/ARM/CMSIS/5.9.0/CMSIS/RTOS2/RTX/Include
     - ../../../../../../Packs/STM32U5xx_DFP/Drivers/CMSIS/Device/ST/STM32U5xx/Include
   output-dirs:
-    intdir: ../tmp/secure/B-U585I-IOT02A/Debug
-    outdir: ../out/secure/B-U585I-IOT02A/Debug
-    rtedir: RTE
+    intdir: .
+    outdir: ../../../../out/secure/B-U585I-IOT02A/Debug
+    rtedir: ../../../../secure/RTE
   output:
     - type: elf
       file: secure.axf

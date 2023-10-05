@@ -153,7 +153,6 @@ void SecureFault_Handler(void)
   }
 }
 
-
 /**
   * @brief This function handles Debug monitor.
   */
