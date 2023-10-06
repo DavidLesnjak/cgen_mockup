@@ -1,0 +1,20 @@
+build-idx:
+  generated-by: csolution version 2.2.0-extgen2
+  cdefault: cdefault.yml
+  csolution: test.csolution.yml
+  cprojects:
+    - cproject: core0/core0.cproject.yml
+    - cproject: core1/core1.cproject.yml
+  cbuilds:
+    - cbuild: core0/core0.Debug+STM32H745BGTx.cbuild.yml
+      project: core0
+      configuration: .Debug+STM32H745BGTx
+    - cbuild: core0/core0.Release+STM32H745BGTx.cbuild.yml
+      project: core0
+      configuration: .Release+STM32H745BGTx
+    - cbuild: core1/core1.Debug+STM32H745BGTx.cbuild.yml
+      project: core1
+      configuration: .Debug+STM32H745BGTx
+    - cbuild: core1/core1.Release+STM32H745BGTx.cbuild.yml
+      project: core1
+      configuration: .Release+STM32H745BGTx
