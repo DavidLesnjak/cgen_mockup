@@ -1,4 +1,4 @@
-layer:
+generator-import:
   for-device: STM32H745BGTx:CM4
   define:
     - CORE_CM4

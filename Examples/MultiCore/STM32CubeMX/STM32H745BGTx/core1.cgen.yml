@@ -1,4 +1,4 @@
-layer:
+generator-import:
   for-device: STM32H745BGTx:CM7
   define:
     - CORE_CM7
